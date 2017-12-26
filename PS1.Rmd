@@ -36,9 +36,9 @@ library(evd) #generates the required T1EV draws
 ni <- 10000 #number of consumers
 nj <- 100 #number of differentiated products
 nz <- 5 #number of intruments
-beta <- 2.5 #made up parameter on characteristics
-alpha <- 1.8 #made up parameter in price
-eta <- 1.9 #made up parameter on characteristic (price eq)
+beta <- 1 #made up parameter on characteristics
+alpha <- 1 #made up parameter in price
+eta <- 1 #made up parameter on characteristic (price eq)
 xj <- data.frame(c(1:nj)) #observed non-price characteristic
 
 #UTILITY
@@ -93,11 +93,16 @@ proc.time()-ptm
 
 uOg <- 0 #utility outside good
 
-uVec1 <- cbind(uVec,uOg)
+uVec1 <- cbind(uVec,uOg) #adds column wiht utility of outside good
 
-choices <- apply(uVec1,1,which.max)
+discr <- apply(uVec1,1,which.max) #goods that yield highest utility
+discrUs <- apply(uVec1,1,max)
 
-names(uVec1)[choices]
+choicesGoods <- data.frame(names(uVec1)[discr]) #same but names
+
+prop.table(table(choicesGoods)) #market shares
+
+
 
 
 ```
