@@ -1,0 +1,106 @@
+---
+title: "Univalle - Organizacion Industrial, 2017"
+author: "Trabajo 1"
+date: "20 de diciembre de 2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This problem set requires that you generate simulated data of a market with 100 differentiated products
+with one observed characteristic, besides the price. The characteristic of product $j \in \{1,2,...,100 \}$ is $x_j=j$. You are required to generate the unobserved product attributes which are assumed to be unknown in the estimation. You'll also be able to generate as many instruments as you need. In the first part, a model with homogeneous consumers is generated and estimated. In the second part a
+more complex model with heterogeneous consumers is generated and estimated. You will have to use a mathematical software such as Matlab, R, Gauss, Fortran, etc. Each student must hand a (different) typed homework. The homework should be written in the style of a paper, explaining what is done in each section, writing down the equations, etc.
+
+1. Generate prices, market shares and unobserved characteristics of the 100 products in the market based on the following assumptions:
+
+$$u_{ij}=\delta_j+\epsilon_{ij}$$
+ 
+where $\delta_j = \beta x_j -\alpha p_j + \xi_j$ is the mean utility level obtained by consumer $i$ when purchasing product $j$ and $\epsilon_ij$ is a type-I extreme value disturbance.
+
+Generate 
+$$\xi_j \sim U(0,1)$$
+
+Generate prices using the following equation
+
+$$p_j = \eta x_j + \xi_j + \sum_{\iota=1...L} \varepsilon_{\iota,j}+\omega_j$$
+
+where 
+$$\varepsilon_{\iota=1...L} \overset{_{iid}}{\sim} N(0,1)$$
+$$\omega_j\overset{_{iid}}{\sim} N(0,1)$$
+
+```{r}
+library(evd) #generates the required T1EV draws
+
+ni <- 10000 #number of consumers
+nj <- 100 #number of differentiated products
+nz <- 5 #number of intruments
+beta <- 2.5 #made up parameter on characteristics
+alpha <- 1.8 #made up parameter in price
+eta <- 1.9 #made up parameter on characteristic (price eq)
+xj <- data.frame(c(1:nj)) #observed non-price characteristic
+
+#UTILITY
+set.seed(85719)
+pigmaj <- runif(100,0,1) #unobserved characteristics of good j
+
+epsilonij <- data.frame(matrix(nrow = ni,ncol = nj)) #empty dataframe for individual shocks
+colnames(epsilonij) <- paste0('good',c(1:100))
+
+ptm <- proc.time()
+for(i in 1:ni){
+  epsilonij[i,] <- rgumbel(nj,0,1) #individual utility shock T1EV
+
+}
+proc.time()-ptm
+
+
+    #PRICES
+    
+    omegaj <- rnorm(100,0,1) #disturbance price equation of good j
+    
+    #instruments
+    vareps <- data.frame(matrix(nrow = nj,ncol = nz))
+    for (i in 1:nz){
+      vareps[,i] <- rnorm(nj,0,1)
+    }
+    colnames(vareps) <- paste('z', 1:5)
+    
+    #creates prices
+    priceFun <- function(xj,pigma,instr, shock) eta*xj + pigma + instr + shock
+    
+    varepsum <- rowSums(vareps)
+    
+    priceVec <- priceFun(xj,pigmaj,varepsum,omegaj)
+
+
+
+#creates mean utilities for the nj differentiated products
+deltaFun <- function(xj,a,price,pig) beta*xj - a*price + pig
+meanUVec <- deltaFun(xj,alpha,priceVec,pigmaj)
+
+
+# creates utilities from a vector of mean utilities (nj) j and an n-vector of unobserved random attributes (ni)
+uVec <- data.frame(matrix(,nrow = ni,ncol = nj))
+
+ptm <- proc.time()
+for(i in 1:ni) {
+  uVec[i,] <- epsilonij[i,] + t(meanUVec)
+}
+
+proc.time()-ptm
+
+uOg <- 0 #utility outside good
+
+uVec1 <- cbind(uVec,uOg)
+
+choices <- apply(uVec1,1,which.max)
+
+names(uVec1)[choices]
+
+
+```
+
+
+
