@@ -91,19 +91,57 @@ for(i in 1:ni) {
 
 proc.time()-ptm
 
+colnames(uVec) <- colnames(epsilonij)
+
 uOg <- 0 #utility outside good
 
 uVec1 <- cbind(uVec,uOg) #adds column wiht utility of outside good
 
+
 discr <- apply(uVec1,1,which.max) #goods that yield highest utility
-discrUs <- apply(uVec1,1,max)
+
+discrUs <- apply(uVec1,1,max) #utility of choosen good
 
 choicesGoods <- data.frame(names(uVec1)[discr]) #same but names
 
 prop.table(table(choicesGoods)) #market shares
 
+#making the outside good 20% share
+
+uVec1[,101] <- quantile(discrUs,.2)
+
+discr <- apply(uVec1,1,which.max) #goods that yield highest utility
+
+choicesGoods <- data.frame(names(uVec1)[discr]) #same but names
 
 
+
+
+#creating dataset for estimation
+prices <- cbind(priceVec,paste0('good',1:100))
+colnames(prices)[2] <- 'choicesGoods'
+shares <- data.frame(prop.table(table(choicesGoods))) #market shares
+characteristics <- cbind(xj,paste0('good',1:100))
+colnames(characteristics)[2] <- 'choicesGoods'
+
+library(dplyr)
+df <- left_join(shares,prices, by= 'choicesGoods')
+df <- left_join(df,characteristics, by= 'choicesGoods')
+
+colnames(df) <- c('good', 'share','price', 'characteristic')
+
+
+df <- df %>%
+  mutate(share0 = share-.2)
+
+
+#logit ignoring endogeneity
+
+ols <- lm(share0 ~ characteristic + price, df)
+
+#instrumenting
+
+firstStage <- lm(formula = )
 
 ```
 
