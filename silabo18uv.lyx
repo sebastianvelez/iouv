@@ -1,0 +1,718 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{booktabs}
+\usepackage{fullpage}
+
+
+\newtheorem{theorem}{Theorem}\newtheorem{acknowledgement}[theorem]{Acknowledgement}\newtheorem{algorithm}[theorem]{Algorithm}\newtheorem{axiom}[theorem]{Axiom}\newtheorem{case}[theorem]{Case}\newtheorem{claim}[theorem]{Claim}\newtheorem{conclusion}[theorem]{Conclusion}\newtheorem{condition}[theorem]{Condition}\newtheorem{conjecture}[theorem]{Conjecture}\newtheorem{corollary}[theorem]{Corollary}\newtheorem{criterion}[theorem]{Criterion}\newtheorem{definition}[theorem]{Definition}\newtheorem{example}[theorem]{Example}\newtheorem{exercise}[theorem]{Exercise}\newtheorem{lemma}[theorem]{Lemma}\newtheorem{notation}[theorem]{Notation}\newtheorem{problem}[theorem]{Problem}\newtheorem{proposition}[theorem]{Proposition}\newtheorem{remark}[theorem]{Remark}\newtheorem{solution}[theorem]{Solution}\newtheorem{summary}[theorem]{Summary}\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+
+\usepackage{babel}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-15
+\fontencoding T1
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 2
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Maestría en Economía-Universidad del Valle 
+\begin_inset Newline newline
+\end_inset
+
+ Organización Industrial 
+\end_layout
+
+\begin_layout Author
+Juan Esteban Carranza
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+jcarraro@banrep.gov.co
+\end_layout
+
+\end_inset
+
+, María Camila Casas
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+mcasaslo@banrep.gov.co
+\end_layout
+
+\end_inset
+
+, Juan Sebastián Vélez
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+jvelezve@banrep.gov.co
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Febrero 2018
+\end_layout
+
+\begin_layout Standard
+ 
+\end_layout
+
+\begin_layout Section*
+Descripción del curso
+\end_layout
+
+\begin_layout Standard
+En este curso hacemos una introducción en profundidad al estudio de métodos
+ empíricos para el estudio de mercados específicos.
+ El curso hace énfasis en técnicas estructurales, en contraste con la literatura
+ de IO que tiene un énfasis más descriptivo.
+ Tal como veremos, la aplicabilidad de las técnicas estudiadas va más alla
+ del campo de la organización industrial y abarca cualquier campo de la
+ microeconomía aplicada, incluyendo la economía laboral, pública, el comercio
+ internacional, el mercadeo, etc.
+\end_layout
+
+\begin_layout Standard
+El curso tiene 57 horas que, si es posible, dividiremos en 14 semanas de
+ clase con dos sesiones semanales.
+ Si esto es posible, haremos un par de recesos que permitan la realización
+ de una tarea computacional, pues el aprendizaje de los temas del curso
+ es imposible sin práctica.
+ En adición a la tarea, se requiere que los estudiantes hagan reportes escritos
+ y presentaciones de artículos originales.
+ Es posible que haya algún examen.
+ Se requiere además que los estudiantes que no tengan una excusa aceptable
+ asistan a los seminarios de micro aplicada del Banco de la República.
+\end_layout
+
+\begin_layout Section*
+Descripción tentativa del curso y lista de lecturas
+\end_layout
+
+\begin_layout Standard
+(items con dos estrellas** son las lecturas básicas; items con una estrella*
+ son artículos que serán presentados en detalle en clase)
+\end_layout
+
+\begin_layout Subsection*
+Introducción: Algunos hechos empíricos, el modelo clásico y el método de
+ momentos (Semana 1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Simon1958"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ravenscraft1983"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "rosse1970"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Modelos empíricos de mercados imperfectos de bienes homogéneos (Semana 1,2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bresnahan1989"
+
+\end_inset
+
+**, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bresnahan1982"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lau1982"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Wolfram2016"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Genesove2017"
+
+\end_inset
+
+*,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Corts1998a"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Porter2016"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "leePorter1984"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ellison1994"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Modelos empíricos de mercados de bienes diferenciados (Semanas 3,4)
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ReisWolak2007"
+
+\end_inset
+
+**, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "McFadden1974"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bresnahan1987"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hausman1994"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Berry1994"
+
+\end_inset
+
+**, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Feenstra1995"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Berry2016"
+
+\end_inset
+
+**, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "goldberg1995"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Wolak1996"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bresnahan1997"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Trajtenberg1989"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Nevo2001"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Petrin2002"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "BLP2004"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Goolsbee2004"
+
+\end_inset
+
+*
+\end_layout
+
+\begin_layout Subsection*
+Bienes diferenciados: Extensiones y aplicaciones (Semanas 5,6)
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hendelLAchSpiegel2017,Miravete2017,Leslie2004,Grennan2013,Song2017"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Tarea computacional I/evaluación I (Semana 7)
+\end_layout
+
+\begin_layout Subsection*
+Funciones de producción: estimación (Semanas 7,8)
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Olley2016"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Ackerberg2007"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Levinsohn2003"
+
+\end_inset
+
+*,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Wooldridge2009"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Ackerberg2006"
+
+\end_inset
+
+*,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gandhi2011"
+
+\end_inset
+
+*.
+\end_layout
+
+\begin_layout Subsection*
+Funciones de producción: extensiones y aplicaciones (Semanas 8,9)
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Eslava2004"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "DeLoecker2013"
+
+\end_inset
+
+*,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Syverson2011"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "DeLoecker2012"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Doraszelski2013"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "DeLoecker2016"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Grieco2016"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Modelos estáticos de entrada/salida y elección de producto (Semanas 9,10)
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bresnahan1987"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bresnahan1990"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bresnahan1991"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "berry1992"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Berry1999"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mazzeo2002"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Seim2006"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Sweeting2009"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Iliberto2009"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Pakes2015a"
+
+\end_inset
+
+*.
+\end_layout
+
+\begin_layout Subsection*
+Tarea computacional II/evaluación II (Semana 11)
+\end_layout
+
+\begin_layout Subsection*
+Modelos dinámicos de elección discreta (Semanas 12,13,14)
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rust1994"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Keane2016"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hotz2013"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "HMSS1994"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Aguirregabiria2002"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rust2018"
+
+\end_inset
+
+**, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Pindyck2016"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "pakes1986"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Aguirregabiria1999"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "rustRothwell1997"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Carranza2010"
+
+\end_inset
+
+*.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "pesendorferRetail2002"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Erdem2003"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hendel2006"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Carranza2010a"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gowrisankaran2007"
+
+\end_inset
+
+*.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "C:/Users/jvelezve/Documents/Mendely library/library"
+options "chicago"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document

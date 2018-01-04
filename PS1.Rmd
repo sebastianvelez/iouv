@@ -70,7 +70,7 @@ proc.time()-ptm
     #creates prices
     priceFun <- function(xj,pigma,instr, shock) eta*xj + pigma + instr + shock
     
-    varepsum <- rowSums(vareps)
+    varepsum <- data.frame(rowSums(vareps))
     
     priceVec <- priceFun(xj,pigmaj,varepsum,omegaj)
 
@@ -123,25 +123,39 @@ colnames(prices)[2] <- 'choicesGoods'
 shares <- data.frame(prop.table(table(choicesGoods))) #market shares
 characteristics <- cbind(xj,paste0('good',1:100))
 colnames(characteristics)[2] <- 'choicesGoods'
+instr <- cbind(varepsum, paste0('good',1:100))
+colnames(instr)[2] <- 'choicesGoods'
 
 library(dplyr)
 df <- left_join(shares,prices, by= 'choicesGoods')
 df <- left_join(df,characteristics, by= 'choicesGoods')
+df <- left_join(df,instr, by= 'choicesGoods')
 
-colnames(df) <- c('good', 'share','price', 'characteristic')
+colnames(df) <- c('good', 'share','price', 'characteristic', 'instr')
+
 
 
 df <- df %>%
-  mutate(share0 = share-.2)
+  mutate(share0 = share-.2) %>%
+  na.omit()
 
 
 #logit ignoring endogeneity
 
 ols <- lm(share0 ~ characteristic + price, df)
+summary(ols)
+
 
 #instrumenting
 
-firstStage <- lm(formula = )
+firstStage <- lm(price ~ instr + characteristic, df )
+summary(firstStage)
+
+df$pHat <- fitted.values(firstStage)
+
+secondStage <- lm(share0 ~ pHat + characteristic, df)
+summary(secondStage)
+
 
 ```
 
