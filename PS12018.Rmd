@@ -1,0 +1,71 @@
+---
+title: "Univalle - Organización Industrial"
+author: "Trabajo 1"
+date: "5 de enero de 2018"
+output: html_document
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Nota: Pueden trabajar en grupos pero al final deben entregar trabajos individuales y cada miembro debe entregar su código cómo un apéndice. Cuando reporten resultados haganlo en tablas formateadas. No se limiten a imprimir la salida que su software arroja.  
+
+
+En este trabajo analizaremos la demanda de parapentes nuevos con datos amablemente puestos a nuestra disposición por Gérard Florit de Para2000.org. [Acá](https://goo.gl/PBJG7H) pueden descargar los datos para realizar la tarea. Los datos corresponden a ventas de parapentes nuevos de 11 marcas y estan agregados a nivel de país/trimestre. 
+
+Al descargar los datos se encontrarán con 3 archivos .csv. Estos son los contenidos de esos archivos:
+
+
+|Archivo|Columnas|Detalle|
+|:----- |:-------|:----------------------------------------------------------|
+|**ppt.csv**|*country*| país donde se vendieron las unidades|
+||*quarter*|trimestre|
+||*brand*|marca de la compañía que fabricó el parapente|
+||*sales*|número de unidades vendidas|
+||*licenses*|numero de licencias de vuelo libre activas en país/trimestre (número de personas que puede comprar un parapente)|
+||*price*|precio en millones de pesos|
+||*ld_ratio*|tasa de "lift-to-drag" normalizada. Es una caracteristica que le importa a los consumidores de parapentes|
+||*cost*|costo de manufactura promedio|
+|**demo.csv**|*country*| país donde se colectan las características demográficas|
+||*quarter*|trimestre|
+||*hhincome1-20*|ingresos de 20 hogares sacados de una encuesta de hogares|
+|**inst.csv**|*country*| país |
+||*quarter*|trimestre|
+||*brand*|marca que se  quiere instrumentar|
+||*cost*|costo de manufactura promedio|
+||*avoutprice*|precio promedio|
+||*pricecountry1-30*| precios en otros 30 países de la misma marca|
+
+# Demanda con consumidores homogéneos (logit)
+
+En este caso la utilidad que un consumidor $i$ deriva cuando compra un parapente $j$ en el país-trimestre $t$ está dada por:
+
+$$u_{ijt} = X_{jt}\beta + \alpha p_{jt} + \xi_{jt} + \epsilon_{ijt}$$
+ en donde $\epsilon_{ijt}$ es i.i.d. logit, $X_{jt}$ son características observadas del producto diferentes del precio $p_{jt}$ y $\xi{jt}$ corresponde a la parte de la utilidad que el econometrista no observa, pero el productor y el consumidor sí. 
+ 
+Estime los parámetros de la demanda:  
+1. mediante MCO, solo con precio y "lift-to-drag" como características del producto.  
+2. medianto MCO, con precio, "lift-to-drag" y dummies por marca.  
+3. medianto MCO, con precio, "lift-to-drag" y dummies por marca-país.  
+4. 1, 2 y 3 usando el costo como instrumento.  
+5. 1, 2 y 3 usando instrumentos a la Hausman (promedio del precio en otros mercados)  
+6. usando la fórmula de la elasticidad del modelo logit, obtenga la elasticidades propias por marca usando los parametros estimados en 1, 2 y 3.   
+
+## Demanda con consumidores heterogéneos (coeficientes aleatorios, BLP)
+
+Ahora suponga que la respuestas de la utilidad de un consumidor a las características del parapente cambian de consumidor a consumidor:
+$$u_{ijt} = X_{jt}\beta+\beta_{ib}B_{jt}+\alpha_i p _{jt} + \xi_{jt}+\epsilon_{ijt}$$ ($B_{jt}$ es una dummy para marca)
+donde 
+
+- $\beta_{ib}=\sigma_B\nu_i$ y $\nu_i$ se distribuye normal estándar  
+- $\alpha_i = \alpha + \sigma_II_i$ ($I_i$ is income)
+
+Estime los parámetros de la demanda($\beta$,$\alpha$,$\sigma_{ib}$,$\sigma_I$):
+
+1. Use como instrumentos tanto los costos como los precios del bien en otro pais-trimestre (no el promedio sino los 30 precios). Use como matriz de ponderación la óptima ($(Z'Z)^{-1}$). Use differentes valores iniciales cuando minimice su función objetivo. No se preocupe por  calcular errores estándar, solo reporte los estimados puntuales y el valor de la función objetivo al final del algoritmo.  
+2. ¿Cuales son las elasticidades propia y cruzadas en Francia durante el trimestre 27? (haga los $\sigma$ iguales a 0 para esto). Comente sobre las diferencias entre las elasticidades obtenidas acá y bajo el modelo logit.  
+3. Obtenga los costos marginales en Francia-27. Compare los costos estimados y los que se incluyen en los datos. Comente. 
