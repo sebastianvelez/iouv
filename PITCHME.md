@@ -63,6 +63,8 @@ $$\log q_{mnt}=\beta_m \log (y_{Bnt}) + \sum_{k=1}^K \delta_{k} \log \pi_{knt}+ 
 
 
  $$\log u_t=\beta_0+\beta_1 \log y_t + \beta_2  \log \Pi_{t}+ Z_t \delta+\epsilon_t$$
+ 
+ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 
 
 ---
