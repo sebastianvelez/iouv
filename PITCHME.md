@@ -82,13 +82,13 @@
 
 ### Es la demanda dinámica?
 
-![No parece](https://i.imgur.com/EZPpYH3.png)
+![](https://i.imgur.com/EZPpYH3.png)
 
 ---
 
 ### Elasticidades (de verdad)
 
-![Imgur](https://i.imgur.com/hGjtyxc.png)
+![](https://i.imgur.com/hGjtyxc.png)
 
 ---
 
