@@ -41,7 +41,7 @@
 
 ### Resultados: Segmentos
 
-![Conditional (on expenditure on beer) elasticities)](https://i.imgur.com/ohsWduG.png)
+![](https://i.imgur.com/ohsWduG.png)
 
 
 ---
