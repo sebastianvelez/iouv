@@ -31,11 +31,39 @@
 
 ---
 
-### Estimation
+### Estimación
 
 - Especificación de la demanda no es crucial
 - Indice de precios no es crucial
 - Ellos proceden a estimar el modelo en reversa: primero el nivel más desagregado
+
+---
+
+
+### Estimación: Nivel más bajo (marca)
+
+
+$$s_{int}=\alpha_{in}+\beta_i \log (y_{Gnt}/P_{nt}) + \sum_{j=1}^J \gamma_{ij} \log p_{jnt}+\epsilon_{int} $$
+
+
+---
+
+
+
+### Estimación: Nivel medio (segmento)
+
+
+$$\log q_{mnt}=\beta_m \log (y_{Bnt}) + \sum_{k=1}^K \delta_{k} \log \pi_{knt}+ \alpha_{mn}+\epsilon_{mnt}$$
+
+
+---
+
+
+### Estimación: Nivel medio (segmento)
+
+
+ $$\log u_t=\beta_0+\beta_1 \log y_t + \beta_2  \log \Pi_{t}+ Z_t \delta+\epsilon_t$$
+
 
 ---
 
