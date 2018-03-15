@@ -49,11 +49,60 @@ $$u_{ijt} = X_{jt}\beta + \alpha p_{jt} + \xi_{jt} + \epsilon_{ijt}$$
  
 Estime los parámetros de la demanda:  
 1. mediante MCO, solo con precio y "lift-to-drag" como características del producto.  
-2. medianto MCO, con precio, "lift-to-drag" y dummies por marca.  
-3. medianto MCO, con precio, "lift-to-drag" y dummies por marca-país.  
-4. 1, 2 y 3 usando el costo como instrumento.  
-5. 1, 2 y 3 usando instrumentos a la Hausman (promedio del precio en otros mercados)  
-6. usando la fórmula de la elasticidad del modelo logit, obtenga la elasticidades propias por marca usando los parametros estimados en 1, 2 y 3.   
+
+```{r mco_plain, echo=FALSE, results='hide'}
+# ppt <- read.csv2("~/teaching/PS1 Carranza/ppt.csv")
+# inst <- read.csv2("~/teaching/PS1 Carranza/inst.csv")
+# dem <- read.csv2("~/teaching/PS1 Carranza/demo.csv")
+# 
+# 
+# #create right hand side variable ln(s_j)-ln(s_0)
+# 
+# library(dplyr)
+# ppt <- ppt %>% 
+#   mutate(share = sales/licenses) %>%
+#   group_by(country, quarter) %>% 
+#   arrange(country, quarter) %>%
+#   mutate(share0 = 1-sum(share)) %>%
+#   ungroup() %>%
+#   mutate(rhs = log(share/ share0))
+# 
+# #simplest logit
+# model1 <- lm(rhs ~ price + ld_ratio, ppt )
+
+
+```
+
+2. medianto MCO, con precio, "lift-to-drag" y dummies por marca.
+```{r mco_brand_dummies, echo=FALSE, results='hide'}
+# model2 <- lm(rhs ~ price + ld_ratio + brand, ppt)
+```
+
+3. medianto MCO, con precio, "lift-to-drag" y dummies por marca-país.
+```{r mco_brandCountry_dummies, echo=FALSE, results='hide'}
+# model3 <- lm(rhs ~ price + ld_ratio + brand*country, ppt)
+```
+
+4. 1, 2 y 3 usando el costo como instrumento.
+```{r cost_instruments, echo=FALSE, results='hide'}
+# library(ivpack)
+# model1_cost <- ivreg(rhs ~ price + ld_ratio | ld_ratio + cost, data = ppt)
+# model2_cost <- ivreg(rhs ~ price + ld_ratio + brand | ld_ratio + brand + cost, data = ppt)
+# model3_cost <- ivreg(rhs ~ price + ld_ratio + brand*country | ld_ratio + brand*country + cost, data = ppt)
+```
+
+
+5. 1, 2 y 3 usando instrumentos a la Hausman (promedio del precio en otros mercados)
+```{r hausman_instruments, echo=FALSE, results='hide'}
+# df <- left_join(ppt,inst, by = c('country','quarter','brand'))
+# model1_haus <- ivreg(rhs ~ price + ld_ratio | ld_ratio + avoutprice, data = df)
+# model2_haus <- ivreg(rhs ~ price + ld_ratio + brand | ld_ratio + brand + avoutprice, data = df)
+# model3_haus <- ivreg(rhs ~ price + ld_ratio + brand*country | ld_ratio + brand*country + avoutprice, data = df)
+
+```
+
+6. usando la fórmula de la elasticidad del modelo logit, obtenga la elasticidades propias por marca usando los parametros estimados en 1, 2 y 3. Comente.
+
 
 ## Demanda con consumidores heterogéneos (coeficientes aleatorios, BLP)
 
@@ -66,6 +115,13 @@ donde
 
 Estime los parámetros de la demanda($\beta$,$\alpha$,$\sigma_{ib}$,$\sigma_I$):
 
-1. Use como instrumentos tanto los costos como los precios del bien en otro pais-trimestre (no el promedio sino los 30 precios). Use como matriz de ponderación la óptima ($(Z'Z)^{-1}$). Use differentes valores iniciales cuando minimice su función objetivo. No se preocupe por  calcular errores estándar, solo reporte los estimados puntuales y el valor de la función objetivo al final del algoritmo.  
+1. Use como instrumentos tanto los costos como los precios del bien en otro pais-trimestre (no el promedio sino los 30 precios). Use como matriz de ponderación la óptima ($(Z'Z)^{-1}$). Use differentes valores iniciales cuando minimice su función objetivo. No se preocupe por  calcular errores estándar, solo reporte los estimados puntuales y el valor de la función objetivo al final del algoritmo.
+```{r}
+# dat <- 
+
+```
+
+
+
 2. ¿Cuales son las elasticidades propia y cruzadas en Francia durante el trimestre 27? (haga los $\sigma$ iguales a 0 para esto). Comente sobre las diferencias entre las elasticidades obtenidas acá y bajo el modelo logit.  
 3. Obtenga los costos marginales en Francia-27. Compare los costos estimados y los que se incluyen en los datos. Comente. 

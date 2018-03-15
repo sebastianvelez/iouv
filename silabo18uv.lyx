@@ -17,7 +17,7 @@
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding iso8859-15
 \fontencoding T1
@@ -68,7 +68,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -140,7 +140,7 @@ En este curso hacemos una introducción en profundidad al estudio de métodos
  empíricos para el estudio de mercados específicos.
  El curso hace énfasis en técnicas estructurales, en contraste con la literatura
  de IO que tiene un énfasis más descriptivo.
- Tal como veremos, la aplicabilidad de las técnicas estudiadas va más alla
+ Tal como veremos, la aplicabilidad de las técnicas estudiadas va más allá
  del campo de la organización industrial y abarca cualquier campo de la
  microeconomía aplicada, incluyendo la economía laboral, pública, el comercio
  internacional, el mercadeo, etc.
@@ -164,8 +164,10 @@ Descripción tentativa del curso y lista de lecturas
 \end_layout
 
 \begin_layout Standard
-(items con dos estrellas** son las lecturas básicas; items con una estrella*
- son artículos que serán presentados en detalle en clase)
+Los ítems con dos asteriscos (**) son lecturas básicas que todos deben hacer
+ antes de clase.
+ Los ítems con un asterisco (*) son artículos que Ustedes presentarán en
+ detalle en clase.
 \end_layout
 
 \begin_layout Subsection*
@@ -272,6 +274,20 @@ Modelos empíricos de mercados de bienes diferenciados (Semanas 3,4)
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hausman1994a"
+
+\end_inset
+
+**, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Deaton2016"
+
+\end_inset
+
+**, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "ReisWolak2007"
@@ -386,11 +402,46 @@ Bienes diferenciados: Extensiones y aplicaciones (Semanas 5,6)
 \begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand citet
-key "hendelLAchSpiegel2017,Miravete2017,Leslie2004,Grennan2013,Song2017"
+key "hendelLAchSpiegel2017"
 
 \end_inset
 
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Miravete2017"
 
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Leslie2004"
+
+\end_inset
+
+**, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Grennan2013"
+
+\end_inset
+
+*, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Song2017"
+
+\end_inset
+
+**, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dellavigna2017"
+
+\end_inset
+
+*.
 \end_layout
 
 \begin_layout Subsection*
@@ -398,7 +449,7 @@ Tarea computacional I/evaluación I (Semana 7)
 \end_layout
 
 \begin_layout Subsection*
-Funciones de producción: estimación (Semanas 7,8)
+Funciones de producción: estimación (Semanas 8,9)
 \end_layout
 
 \begin_layout Standard
@@ -447,7 +498,7 @@ key "Gandhi2011"
 \end_layout
 
 \begin_layout Subsection*
-Funciones de producción: extensiones y aplicaciones (Semanas 8,9)
+Funciones de producción: extensiones y aplicaciones (Semanas 10,11)
 \end_layout
 
 \begin_layout Standard
@@ -503,7 +554,7 @@ key "Grieco2016"
 \end_layout
 
 \begin_layout Subsection*
-Modelos estáticos de entrada/salida y elección de producto (Semanas 9,10)
+Modelos estáticos de entrada/salida y elección de producto (Semanas 12,13,14)
 \end_layout
 
 \begin_layout Standard
@@ -577,10 +628,6 @@ key "Pakes2015a"
 \end_inset
 
 *.
-\end_layout
-
-\begin_layout Subsection*
-Tarea computacional II/evaluación II (Semana 11)
 \end_layout
 
 \begin_layout Subsection*
