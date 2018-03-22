@@ -95,7 +95,20 @@
 
 ### Para que usan los estimados?
 
-<center>
+- Cómo una aplicación de los estimados ellos proponen evaluar una fusión hipotética entre dos cervezas del segmento light: Coors y Labatts
+- Ellos calculan el cambio en precios que puede ocasionar la fusión
 
-![](https://media.giphy.com/media/xT0GqxwoyBc4hIbLRC/giphy.gif)
-</center>
+
+||0%|5%|10%|
+|:---|:---:|:---:|:---:|
+|Coors|4.4%|-0.8%|-6.1
+||(1.2)|(1.2)|(1.1)|
+|Labatts|3.3|-1.9|-7.0||
+||(1.0)|(1.0)|(0.9)|
+
+- Los aumentos de precios cuando se incluye cervezas premium alcanzan 23%
+- Los aumentos de precios cuando se incluye cervezas Light  alcanzan 27%
+
+
+
+
