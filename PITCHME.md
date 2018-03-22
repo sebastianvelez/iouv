@@ -98,7 +98,9 @@
 - Cómo una aplicación de los estimados ellos proponen evaluar una fusión hipotética entre dos cervezas del segmento light: Coors y Labatts
 - Ellos calculan el cambio en precios que puede ocasionar la fusión
 
+---
 
+### Efectos de una fusión entre Coors y Labatts
 ||0%|5%|10%|
 |:---|:---:|:---:|:---:|
 |Coors|4.4%|-0.8%|-6.1
