@@ -108,6 +108,9 @@
 |Labatts|3.3|-1.9|-7.0||
 ||(1.0)|(1.0)|(0.9)|
 
+---
+### Efectos de una fusión entre Coors y Labatts
+
 - Los aumentos de precios cuando se incluye cervezas premium alcanzan 23%
 - Los aumentos de precios cuando se incluye cervezas Light  alcanzan 27%
 
